@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
 const movieSchema = new mongoose.Schema({
-    title: String, 
-    releaseYear: Number, 
-    mpaaRating: String,
+    title: { type: String, required: true }, 
+    releaseYear: { type: Number, required: true }, 
+    mpaaRating: { type: String, required: true },
     cast: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Performer'}]
 })
 
